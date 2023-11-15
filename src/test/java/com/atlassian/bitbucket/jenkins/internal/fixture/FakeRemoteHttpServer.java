@@ -5,7 +5,7 @@ import okio.Buffer;
 import okio.BufferedSource;
 import org.apache.tools.ant.filters.StringInputStream;
 
-import javax.annotation.Nullable;
+import edu.umd.cs.findbugs.annotations.Nullable;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;

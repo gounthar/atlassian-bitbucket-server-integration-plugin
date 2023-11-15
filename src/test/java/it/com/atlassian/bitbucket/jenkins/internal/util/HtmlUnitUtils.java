@@ -1,9 +1,9 @@
 package it.com.atlassian.bitbucket.jenkins.internal.util;
 
-import com.gargoylesoftware.htmlunit.ElementNotFoundException;
-import com.gargoylesoftware.htmlunit.html.*;
+import org.htmlunit.ElementNotFoundException;
+import org.htmlunit.html.*;
 
-import javax.annotation.Nullable;
+import edu.umd.cs.findbugs.annotations.Nullable;
 import java.util.List;
 import java.util.function.Supplier;
 

@@ -6,7 +6,7 @@ import com.atlassian.bitbucket.jenkins.internal.model.deployment.DeploymentState
 import com.google.inject.ImplementedBy;
 import hudson.model.Run;
 
-import javax.annotation.CheckForNull;
+import edu.umd.cs.findbugs.annotations.CheckForNull;
 
 /**
  * A factory for creating instances of {@link BitbucketDeployment} from job information.

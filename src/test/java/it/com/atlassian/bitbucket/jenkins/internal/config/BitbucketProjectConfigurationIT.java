@@ -1,7 +1,7 @@
 package it.com.atlassian.bitbucket.jenkins.internal.config;
 
 import com.atlassian.bitbucket.jenkins.internal.scm.BitbucketSCM;
-import com.gargoylesoftware.htmlunit.html.*;
+import org.htmlunit.html.*;
 import hudson.model.FreeStyleProject;
 import hudson.plugins.git.BranchSpec;
 import it.com.atlassian.bitbucket.jenkins.internal.fixture.BitbucketJenkinsRule;
@@ -61,8 +61,8 @@ public class BitbucketProjectConfigurationIT {
         assertEquals(bbJenkinsRule.getBitbucketServerConfiguration().getId(),
                 serverId.getSelectedOptions().get(0).getValueAttribute());
 
-        assertEquals(PROJECT_NAME, form.getInputByName("_.projectName").getValueAttribute());
-        assertEquals(REPO_NAME, form.getInputByName("_.repositoryName").getValueAttribute());
+        assertEquals(PROJECT_NAME, form.getInputByName("_.projectName").getValue());
+        assertEquals(REPO_NAME, form.getInputByName("_.repositoryName").getValue());
     }
 
     @Test
@@ -98,8 +98,8 @@ public class BitbucketProjectConfigurationIT {
 
         // It would be better to actually type the value in the project/repo name inputs, do the search and select the
         // corresponding result to check that the search works. But I haven't put in the time to figure out how to do it
-        form.getInputByName("_.projectName").setValueAttribute(PROJECT_NAME);
-        form.getInputByName("_.repositoryName").setValueAttribute(REPO_NAME);
+        form.getInputByName("_.projectName").setValue(PROJECT_NAME);
+        form.getInputByName("_.repositoryName").setValue(REPO_NAME);
 
         HtmlPage submit = bbJenkinsRule.submit(form);
         assertNotNull(submit);
@@ -127,7 +127,7 @@ public class BitbucketProjectConfigurationIT {
 
         HtmlInput projectNameInput = form.getInputByName("_.projectName");
         projectNameInput.click();
-        projectNameInput.setValueAttribute("");
+        projectNameInput.setValue("");
         form.click();
         bbJenkinsRule.waitForBackgroundJavaScript();
 
@@ -144,7 +144,7 @@ public class BitbucketProjectConfigurationIT {
 
         HtmlInput projectNameInput = form.getInputByName("_.projectName");
         projectNameInput.click();
-        projectNameInput.setValueAttribute("non-existent-project");
+        projectNameInput.setValue("non-existent-project");
         form.click();
         bbJenkinsRule.waitForBackgroundJavaScript();
 
@@ -160,12 +160,12 @@ public class BitbucketProjectConfigurationIT {
         HtmlForm form = configurePage.getFormByName("config");
         HtmlInput projectNameInput = form.getInputByName("_.projectName");
         projectNameInput.click();
-        projectNameInput.setValueAttribute(PROJECT_NAME);
+        projectNameInput.setValue(PROJECT_NAME);
         form.click();
 
         HtmlInput repoNameInput = form.getInputByName("_.repositoryName");
         repoNameInput.click();
-        repoNameInput.setValueAttribute("");
+        repoNameInput.setValue("");
         form.click();
         bbJenkinsRule.waitForBackgroundJavaScript();
 
@@ -181,12 +181,12 @@ public class BitbucketProjectConfigurationIT {
         HtmlForm form = configurePage.getFormByName("config");
         HtmlInput projectNameInput = form.getInputByName("_.projectName");
         projectNameInput.click();
-        projectNameInput.setValueAttribute(PROJECT_NAME);
+        projectNameInput.setValue(PROJECT_NAME);
         form.click();
 
         HtmlInput repoNameInput = form.getInputByName("_.repositoryName");
         repoNameInput.click();
-        repoNameInput.setValueAttribute("non-existent-repo");
+        repoNameInput.setValue("non-existent-repo");
         form.click();
         bbJenkinsRule.waitForBackgroundJavaScript();
 

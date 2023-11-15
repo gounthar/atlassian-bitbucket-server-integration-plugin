@@ -2,7 +2,7 @@ package com.atlassian.bitbucket.jenkins.internal.model.deployment;
 
 import com.atlassian.bitbucket.jenkins.internal.deployments.Messages;
 
-import javax.annotation.CheckForNull;
+import edu.umd.cs.findbugs.annotations.CheckForNull;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;

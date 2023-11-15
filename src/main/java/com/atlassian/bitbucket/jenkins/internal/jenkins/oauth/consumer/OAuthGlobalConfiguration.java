@@ -14,7 +14,7 @@ import hudson.model.ManagementLink;
 import jenkins.model.Jenkins;
 import org.kohsuke.stapler.StaplerRequest;
 
-import javax.annotation.CheckForNull;
+import edu.umd.cs.findbugs.annotations.CheckForNull;
 import javax.inject.Inject;
 import java.util.Collection;
 

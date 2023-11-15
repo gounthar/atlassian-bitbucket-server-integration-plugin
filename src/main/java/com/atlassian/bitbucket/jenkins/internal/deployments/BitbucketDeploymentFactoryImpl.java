@@ -9,7 +9,7 @@ import hudson.model.Run;
 import jenkins.branch.MultiBranchProject;
 import org.jenkinsci.plugins.displayurlapi.DisplayURLProvider;
 
-import javax.annotation.CheckForNull;
+import edu.umd.cs.findbugs.annotations.CheckForNull;
 import java.util.Arrays;
 import java.util.Collection;
 

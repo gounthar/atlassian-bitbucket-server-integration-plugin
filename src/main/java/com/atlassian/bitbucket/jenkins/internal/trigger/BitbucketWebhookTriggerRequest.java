@@ -3,7 +3,7 @@ package com.atlassian.bitbucket.jenkins.internal.trigger;
 import com.atlassian.bitbucket.jenkins.internal.model.BitbucketUser;
 import hudson.model.Action;
 
-import javax.annotation.Nullable;
+import edu.umd.cs.findbugs.annotations.Nullable;
 import java.util.*;
 
 import static java.util.Optional.ofNullable;

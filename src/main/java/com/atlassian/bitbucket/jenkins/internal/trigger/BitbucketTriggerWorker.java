@@ -7,7 +7,7 @@ import hudson.scm.PollingResult;
 import hudson.util.StreamTaskListener;
 import jenkins.triggers.SCMTriggerItem;
 
-import javax.annotation.CheckForNull;
+import edu.umd.cs.findbugs.annotations.CheckForNull;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;

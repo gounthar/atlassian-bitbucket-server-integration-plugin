@@ -8,7 +8,7 @@ import com.cloudbees.plugins.credentials.Credentials;
 import com.cloudbees.plugins.credentials.CredentialsMatchers;
 import com.cloudbees.plugins.credentials.CredentialsProvider;
 import com.cloudbees.plugins.credentials.fingerprints.ItemCredentialsFingerprintFacet;
-import com.gargoylesoftware.htmlunit.html.*;
+import org.htmlunit.html.*;
 import hudson.model.Fingerprint;
 import hudson.model.FreeStyleProject;
 import it.com.atlassian.bitbucket.jenkins.internal.fixture.BitbucketJenkinsRule;
@@ -74,11 +74,11 @@ public class BitbucketPluginConfigurationIT {
         //Set required fields in the config form
         HtmlInput serverNameInput = form.getInputByName("_.serverName");
         String serverName = "New Bitbucket";
-        serverNameInput.setValueAttribute(serverName);
+        serverNameInput.setValue(serverName);
 
         HtmlInput baseUrlInput = form.getInputByName("_.baseUrl");
         String serverUrl = "http://bitbucket.example.com";
-        baseUrlInput.setValueAttribute(serverUrl);
+        baseUrlInput.setValue(serverUrl);
 
         HtmlSelect adminCredential = form.getSelectByName("_.adminCredentialsId");
         waitTillItemIsRendered(adminCredential::getOptions);
@@ -115,10 +115,10 @@ public class BitbucketPluginConfigurationIT {
     @Test
     public void testBitbucketServerFieldsShouldBePopulatedWithProperValues() throws IOException {
         HtmlInput serverNameInput = form.getInputByName("_.serverName");
-        assertEquals(SERVER_NAME, serverNameInput.getValueAttribute());
+        assertEquals(SERVER_NAME, serverNameInput.getValue());
 
         HtmlInput baseUrlInput = form.getInputByName("_.baseUrl");
-        assertEquals(BITBUCKET_BASE_URL, baseUrlInput.getValueAttribute());
+        assertEquals(BITBUCKET_BASE_URL, baseUrlInput.getValue());
 
         HtmlSelect adminCredential = form.getSelectByName("_.adminCredentialsId");
         waitTillItemIsRendered(adminCredential::getOptions);

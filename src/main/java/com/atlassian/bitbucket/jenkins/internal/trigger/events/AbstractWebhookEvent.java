@@ -2,7 +2,7 @@ package com.atlassian.bitbucket.jenkins.internal.trigger.events;
 
 import com.atlassian.bitbucket.jenkins.internal.model.BitbucketUser;
 
-import javax.annotation.Nullable;
+import edu.umd.cs.findbugs.annotations.Nullable;
 import java.util.Date;
 import java.util.Optional;
 
